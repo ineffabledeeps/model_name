@@ -35,7 +35,7 @@ class students(models.Model):
     student_phone = models.CharField(max_length=100)
     semester = models.CharField(max_length=100)
     track = models.CharField(max_length=255)
-    dept_id = models.ForeignKey(dept,on_delete=models.CASCADE,max_length=255)
+    dept_id = models.ForeignKey(dept,on_delete=models.CASCADE)
     
 class sem(models.Model):
     semester = models.CharField(primary_key=True,max_length=255)
@@ -45,7 +45,7 @@ class course(models.Model):
     course_name = models.CharField(max_length=100)
     faculty = models.CharField(max_length=100)
     ta = models.CharField(max_length=100)
-    semester = models.ForeignKey(students,on_delete=models.CASCADE,max_length=255)
+    semester = models.ForeignKey(students,on_delete=models.CASCADE)
     lecture_hrs = models.IntegerField(blank=True)
     tut_hrs = models.IntegerField(blank=True)
     capacity = models.IntegerField(blank=True)
