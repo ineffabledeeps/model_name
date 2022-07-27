@@ -37,7 +37,8 @@ class students(models.Model):
     track = models.CharField(max_length=255)
     dept_id = models.ForeignKey(dept,on_delete=models.CASCADE,max_length=255)
     
-
+class sem(models.Model):
+    semester = models.CharField(primary_key=True,max_length=255)
 class course(models.Model):
     course_id  = models.CharField(primary_key=True,max_length=50)
     track_core = models.CharField(max_length=255)
