@@ -1,3 +1,3 @@
 [submodule "model_name/frontend/my-app"]
 	path = model_name/frontend/my-app
-	url = https://github.com/ineffabledeeps/iims/iims.git
+	url = https://github.com/ineffabledeeps/iims
