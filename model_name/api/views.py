@@ -19,9 +19,6 @@ class ClassroomList(APIView):
         data = classroom.objects.all().filter(status=status)
         serializer=ClassroomSerializer(data,context={'request': request}, many=True)
         return Response(serializer.data)
-
-    def post(self,request,status):
-          return Response("in-progress")
           
 @permission_classes((permissions.AllowAny,))
 class FacultyList(APIView):
@@ -55,4 +52,4 @@ class Timetable(APIView):
         return Response(serializer.data)
 
     def post(self,request,status):
-          return Response("in-progress")
+          return Response(request.data["name"])
