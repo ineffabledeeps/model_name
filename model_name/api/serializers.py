@@ -59,15 +59,15 @@ class TimetableSerializer(serializers.ModelSerializer):
         # 'ishh':now.weekday(),'day':calendar.day_name[now.weekday()]})
 
 
-class Meeting_reqSerializer(serializers.ModelSerializer):
-    fac_name = serializers.SerializerMethodField('get_fac');
+# class Meeting_reqSerializer(serializers.ModelSerializer):
+    # fac_id = ;
     
-    def get_fac(self,obj):
-        fac_name = faculties.objects.all().filter(fac_name = fac_name)
-        return fac_name
+    # def get_fac(self,obj):
+    #     fac_name = faculties.objects.all().filter(fac_id= fac_id)
+    #     return fac_name
 
-    class Meta:
-        model = students
-        fields = ('prn','student_name','dept_id')
+    # class Meta:
+    #     model = students
+    #     fields = ('prn','student_name','dept_id')
 
 
