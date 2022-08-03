@@ -1,5 +1,4 @@
 from pickle import FALSE, TRUE
-from pyexpat import model
 from django.db import models
 from datetime import datetime
 import calendar
@@ -9,23 +8,25 @@ import calendar
 class dept(models.Model):
     dept_id = models.CharField(primary_key=True,max_length=50)
     dept_name = models.CharField(max_length=100)
+    updated_date = models.DateField(auto_now=True)
+
 
 class batch(models.Model):
     batch_id = models.CharField(primary_key=True,max_length=50)
     # batch_name = models.CharField(max_length=100)
     dept_id = models.ForeignKey(dept,on_delete=models.CASCADE,max_length=255)
+    updated_date = models.DateField(auto_now=True)
+
 
 class faculties(models.Model):
     fac_id  = models.CharField(primary_key=True,max_length=50)
     fac_name = models.CharField(max_length=100)
     dept_id = models.ForeignKey(dept,on_delete=models.CASCADE,max_length=255)
     fac_role = models.CharField(max_length=100)
+    fac_cab_no = models.IntegerField(blank=True)
+    updated_date = models.DateField(auto_now=True)
 
-# class course(models.Model):
-#     course_id  = models.CharField(primary_key=True,max_length=50)
-#     course_name = models.CharField(max_length=100)
-#     course_code = models.CharField(max_length=100)
-#     dept_id = models.ForeignKey(dept,on_delete=models.CASCADE,max_length=255)
+
 
 class students(models.Model):
     prn = models.CharField(primary_key=True,max_length=255)
@@ -35,17 +36,20 @@ class students(models.Model):
     student_phone = models.CharField(max_length=100)
     semester = models.CharField(max_length=100)
     track = models.CharField(max_length=255)
-    dept_id = models.ForeignKey(dept,on_delete=models.CASCADE)
+    dept_id = models.ForeignKey(dept,on_delete=models.CASCADE,max_length=255)
+    updated_date = models.DateField(auto_now=True)
+
     
 class sem(models.Model):
     semester = models.CharField(primary_key=True,max_length=255)
+
 class course(models.Model):
     course_id  = models.CharField(primary_key=True,max_length=50)
     track_core = models.CharField(max_length=255)
     course_name = models.CharField(max_length=100)
     faculty = models.CharField(max_length=100)
     ta = models.CharField(max_length=100)
-    semester = models.ForeignKey(students,on_delete=models.CASCADE)
+    semester = models.ForeignKey(students,on_delete=models.CASCADE,max_length=255)
     lecture_hrs = models.IntegerField(blank=True)
     tut_hrs = models.IntegerField(blank=True)
     capacity = models.IntegerField(blank=True)
@@ -54,6 +58,8 @@ class course(models.Model):
     assigned_room = models.IntegerField(blank=True)
     assigned_lab = models.IntegerField(blank=True)
     dept_id = models.ForeignKey(dept,on_delete=models.CASCADE,max_length=255)
+    updated_date = models.DateField(auto_now=True)
+
 
 
 
@@ -97,6 +103,7 @@ class classroom(models.Model):
     whiteboard = models.IntegerField(blank=True)
     count = models.IntegerField(blank=True)
     type = models.CharField(max_length=255)
+    updated_date = models.DateField(auto_now=True)
 
 class exam(models.Model):
     exam_id = models.CharField(primary_key=True,max_length=255)
@@ -108,3 +115,18 @@ class exam(models.Model):
     end_date = models.DateTimeField(auto_now_add = True) 
     exam_type = models.CharField(max_length=255)
     prn = models.ForeignKey(students,on_delete=models.CASCADE,max_length=255)
+    updated_date = models.DateField(auto_now=True)
+
+
+
+class meeting_req(models.Model):
+    # student_name = models.ForeignKey(students,on_delete=models.CASCADE,max_length=255)
+    prn = models.ForeignKey(students,on_delete=models.CASCADE,max_length=255)
+    dept_id = models.ForeignKey(dept,on_delete=models.CASCADE,max_length=255)
+    fac_id = models.ForeignKey(faculties,on_delete=models.CASCADE,max_length=255)
+    request_id = models.AutoField(primary_key=True)
+    status_req = models.CharField(max_length=255)
+    updated_date = models.DateField(auto_now=True)
+
+
+    

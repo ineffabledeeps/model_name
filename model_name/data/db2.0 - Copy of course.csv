@@ -1,0 +1,56 @@
+Course_id,Track Core,Course_name,Faculty,T.A,Lecture_hrs,Tut_hrs,Capacity,Lab_hrs,Lab_Capacity,Assigned_room,Assigned_Lab,Semester,Dept_id
+CSE101,,Introduction to Programming,Sunanda Mulik,Sulaxan,3,1,,2,,,,2001,Btechcse
+CSE102,,Basic Electrical and Electronics Engineering,None,Vidya Kadam,3,1,,2,,,,2001,Btechcse
+CSE103,,Computer Skills,None,Karishma Doke-Yash More,1,0,,2,,,,2001,Btechcse
+CSE104,,Applied Computational Mathematics-I,Rishikant Jaha,Varsha Sambaje-Suprabhat Sinha,3,1,,0,,,,2001,Btechcse
+CSE105,,Soft Skills,Aabha Gupta,None,2,1,,2,,,,2001,Btechcse
+CSE 301,,Design and Analysis of Algorithms,Dr.Kapil,Samrudhi Sapkal-Varsha Sambaje,3,1,,2,,430,353,2001,Btechcse
+CSE 302,,Digital Communications,Dr.Prateek,Bhakti Sathe-Jayshree Kawale,3,1,,2,,430,420,2001,Btechcse
+CSE 303,,Computer Organization,Dr. Garima Pandey,None,3,0,,0,,430,,2001,Btechcse
+CSE 304,,Embedded Systems Design,Dr.Yogesh Sariya,Suraj Shete-Mansa Madapti-Vidya Kadam,3,1,,2,,430,324,2001,Btechcse
+CSE 305,,Technology Management and Commercialization,Priti Patil,None,3,0,,0,,430,,2001,Btechcse
+CSE 306,,Design Project-I,Swet Chandan,Akash Dhange- Rajkumar,0,0,,0,,430,,2001,Btechcse
+CSE 501,,Systems Security,Vinayak Sathe,Raji Panikar-Varshita Gangadhar,3,1,,2,,432,,2001,Btechcse
+CSE 502,,Software Engineering and Project Management,Sunda Mulik,None,3,0,,0,,432,,2001,Btechcse
+CSE 503,,DSP Systems,Yudhishiter Raut,Shilpa Marathe-Kunal Dombre,3,1,,2,,432,,2001,Btechcse
+CSE 504,TC1,"Fundamentals of AI and 
+ Machine Learning",Tamal Mondal,Shrikant Mahendrakar-Nikhil Sominidhe,3,1,,2,,432,,2001,Btechcse
+AIM501,TC2,Principle of Data Science & Engineering,Samarjit Roy,Madhuri Pagale,3,1,,2,,432,,2001,Btechcse
+DS501,TC2,Principle of Data Science & Engineering,Samarjit Roy,Madhuri Pagale,3,1,,2,,432,,2001,Btechcse
+CYS501,TC2,Fundametals of Cyber security,Nikita Pagar,None,3,1,,2,,432,,2001,Btechcse
+AI-TC6,TC6,AI Processors and Architecture,Bahubali Shiragapur,Remya Praveen,3,1,,2,,440,,2001,Btechcse
+AI-TC7,TC7,AI applications and Ethics,Samarjit Roy,Rashmi Dharwadkar,3,1,,2,,440,,2001,Btechcse
+AI-TC8,TC8,Advance AI,Arosh S,Kartik Konar-Sulaxan,3,1,,2,,440,,2001,Btechcse
+DS-TC6,TC6,Data Visualization,Garima Pandey,Sweta Bennait,3,1,,2,,431,,2001,Btechcse
+DS-TC7,TC7,AI applications and Ethics,Samarjit Roy,Rashmi Dharwadkar,3,1,,2,,440,,2001,Btechcse
+DS-TC8,TC8,Advanced DS,Tamal Mondal,Varsha Sambhaje,3,1,,2,,431,,2001,Btechcse
+ROBO-TC6,TC6,Machine Vision systems,Arosh S,Rajkumar,3,1,,2,,,,2001,Btechcse
+ROBO-TC7,TC7,Modelling and Simulation,Swet Chandan,Jayshree Kawale,3,1,,2,,,,2001,Btechcse
+ROBO-TC8,TC8,"Advanced Robotics(SLAM, Expressive robotics)",Yudhishthir Raut,Mansa Mandapti,3,1,,2,,,,2001,Btechcse
+Cyber-TC6,TC6,Internet security and Malware analysis,Richa Purohit,Remya Praveen,3,1,,2,,,,2001,Btechcse
+Cyber-TC7,TC7,Cyber laws and security threat management,Veena Kirge,None,3,1,,2,,,,2001,Btechcse
+Cyber-TC8,TC8,Advanced Cyber Security,Vinayak Sathe,Sulaxn Jadhav,3,1,,2,,,,2001,Btechcse
+CSE 116,,DS,Dr.Tamal Mondal,Nikita Pagar,3,1,120,2,60,,,2001,Btechcse
+CSE 117,,DLD,Dr.Yogesh Sariya,Jayshree,3,1,120,2,60,,,2001,Btechcse
+CSE 118,,DTFW,Dr.Rajshekar,Rajkumar,3,0,120,2,60,,,2001,Btechcse
+CSE 119,,ACM II,Dr.Anju Chaurasia,Varsha Sambaje,3,1,120,0,,,,2001,Btechcse
+CSE 120,,HP,Dr.Shashi Singh,None,3,0,120,0,,,,2001,Btechcse
+CSE 121,,ICS,Dr.Prateek Verma,Suraj Shete,3,1,120,2,60,,,2001,Btechcse
+CSE 217,,IIS,Dr.Bahubali Shiragapur,Madhuri Pagale,3,2,120,0,,,,2001,Btechcse
+CSE 218,,DBS,Priti Patil,Sweta Bennait,3,1,120,2,60,,,2001,Btechcse
+CSE 219,,SS,Dr.Garima Pandey,Raji Panikar,3,1,120,2,60,,,2001,Btechcse
+CSE 220,,CN,Dr.Kapil Sharma,Jayshree,3,1,120,2,60,,,2001,Btechcse
+CSE 221,,EVS,Dr.Saji Baby,None,3,0,120,0,,,,2001,Btechcse
+CSE 222,,DP II,Dr.Bahubali Shiragapur,None,3,0,120,0,,,,2001,Btechcse
+CSE601,TC3,DNN,Dr S. Arosh,Shrikant M,3,1,120,2,60,,,2001,Btechcse
+AI (AIM601),TC4,GT,Dr S. Arosh,Dhanshree Varute,3,1,120,2,60,,,2001,Btechcse
+DS (DSC601),TC4,BDA,Dr.Tamal Mondal,Madhuri Pagale,3,1,60,2,60,,,2001,Btechcse
+ROBO (ROB601),TC4,SA,Yudhishthir Raut,Manasa Mandpati,3,1,30,2,60,,,2001,Btechcse
+CS (CYS601),TC4,SSS,Dr.Garima Pandey,Sulaxan Jadhav,3,1,30,2,60,,,2001,Btechcse
+AI (AIM602),TC5,HPC,Prof. Vinayak Sathe,Shilpa Marathe,3,1,60,2,60,,,2001,Btechcse
+ROBO (ROB602),TC5,RHPC,Prof. Vinayak Sathe B,Shilpa Marathe,3,1,30,2,60,,,2001,Btechcse
+DS (DSC602),TC5,KDDM,Dr.Prateek Verma,Dhanshree Varute,3,1,60,2,60,,,2001,Btechcse
+CS (CYS602),TC5,CF,Prof. Vinayak Sathe C,Sulaxan Jadhav,3,1,30,2,60,,,2001,Btechcse
+OEL-1,OEL-1,QC,Dr.Kapil Sharma,None,3,0,120,2,60,,,2001,Btechcse
+OEL-2,OEL-2,MM,Dr. Abhinita D,None,3,0,30,0,,,,2001,Btechcse
+OEL-2,OEL-2,GD,Amit Kumar Om,None,3,0,60,0,,,,2001,Btechcse
