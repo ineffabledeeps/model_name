@@ -1,3 +1,4 @@
+from urllib import response
 from .serializers import *
 from rest_framework.decorators import api_view, permission_classes,parser_classes
 from rest_framework.response import Response
@@ -34,7 +35,8 @@ class FacultyList(APIView):
     def get(self,request):
         data = faculties.objects.all()
         serializer=FacultySerializer(data,context={'request': request}, many=True)
-        return Response(serializer.data)
+        
+        return Response(serializer.data,)
 
     def post(self,request,status):
           return Response("in-progress")
@@ -70,6 +72,7 @@ class Get_meeting_reqList(APIView):
         fetched_data = meeting_req.objects.all().filter(fac_id=fac_id) # fetching personalized req from table
         return Response(fetched_data.values())
 
+@permission_classes((permissions.AllowAny,))
 class Set_reqList(APIView):
     def post(self,request):
         fac_id = request.data["fac_id"]
@@ -78,6 +81,7 @@ class Set_reqList(APIView):
         fetched_data = meeting_req.objects.all().filter(fac_id=fac_id,prn=prn,status=status) # fetching personalized req from table
         return Response(fetched_data.values())
 
+@permission_classes((permissions.AllowAny,))
 class Timetable(APIView):
     now = datetime.now()
     day=calendar.day_name[now.weekday()].lower()
@@ -92,4 +96,3 @@ class Timetable(APIView):
 
     def post(self,request,status):
           return Response("in-progress")
-

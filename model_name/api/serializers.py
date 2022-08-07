@@ -1,6 +1,5 @@
 from datetime import date
 from distutils.command.clean import clean
-from matplotlib.style import available
 from rest_framework import serializers
 # from models import classroom, faculties, timetable
 from datetime import datetime
@@ -20,7 +19,7 @@ class FacultySerializer(serializers.ModelSerializer):
     available = serializers.SerializerMethodField('avail')
 
     def avail(self,obj):
-        return True
+        return False
     class Meta:
         model = faculties
         fields=('fac_id','fac_name','dept_id','fac_role','fac_cab_no','available')
