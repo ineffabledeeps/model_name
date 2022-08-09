@@ -7,7 +7,6 @@ from rest_framework.response import Response
 from rest_framework import permissions
 from model_name.models import classroom, timetable,dept
 from rest_framework.views import APIView
-from rest_framework.parsers import JSONParser
 from model_name.models import *
 from model_name.models import faculties
 from datetime import date
