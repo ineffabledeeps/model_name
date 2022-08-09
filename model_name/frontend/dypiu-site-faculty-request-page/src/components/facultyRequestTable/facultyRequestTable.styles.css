@@ -1,0 +1,105 @@
+.request-table {
+  margin: 2rem 10rem 4rem 10rem;
+}
+.status-heading {
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  gap: 2px;
+}
+.status {
+  width: 30px;
+  height: 30px;
+}
+
+.student-card {
+  width: 830px;
+  height: 155px;
+  border: 1px solid #c4e4f0;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  column-gap: 4rem;
+  margin-bottom: 1rem;
+}
+.student-pfp {
+  width: 78px;
+  height: 78px;
+}
+.student-info,
+.student-course-info,
+.student-note {
+  width: 100px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+.student-name,
+.student-course {
+  font-weight: 600;
+  margin-bottom: 5px;
+}
+.student-prn,
+.student-year,
+.note-title {
+  font-weight: 400;
+  font-size: 15px;
+  letter-spacing: -0.28px;
+  color: #727272;
+}
+.note {
+  box-shadow: 0px 0px 1px rgba(0, 0, 0, 0.25);
+  border-radius: 9px;
+  border: 1px solid #b4b4b4;
+  text-align: center;
+  width: 127px;
+  height: 42px;
+  outline: none;
+  padding: 5px 10px;
+  resize: none;
+  margin-top: 5px;
+}
+.note::placeholder {
+  font-weight: 600;
+  padding-top: 5.5px;
+}
+.request-btn-container {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+.request-btn-container button {
+  padding: 7px 25px;
+  border-radius: 14px;
+  border: none;
+  transition: 0.3s all;
+}
+.request-btn-container button:hover {
+  filter: brightness(110%);
+}
+.request-btn-container button:active {
+  transform: translateY(3px);
+}
+.accept-btn {
+  background: #00aeef;
+}
+.decline-btn {
+  background: #c4e4f0;
+}
+.contact-btn {
+  padding: 7px 25px;
+  border-radius: 14px;
+  border: none;
+  transition: 0.3s all;
+  background: #5beea9;
+}
+.contact-btn:hover {
+  filter: brightness(110%);
+}
+.contact-btn:active {
+  transform: translateY(3px);
+}

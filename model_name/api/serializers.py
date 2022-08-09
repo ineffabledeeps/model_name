@@ -1,10 +1,13 @@
+from dataclasses import field
 from datetime import date
 from distutils.command.clean import clean
+from xml.etree.ElementTree import tostring
 from rest_framework import serializers
 # from models import classroom, faculties, timetable
 from datetime import datetime
 import calendar
-from model_name.models import students,faculties,classroom,timetable
+from model_name.models import meeting_req, students,faculties,classroom,timetable
+import math
 
 
 class ClassroomSerializer(serializers.ModelSerializer):
@@ -19,11 +22,28 @@ class FacultySerializer(serializers.ModelSerializer):
     available = serializers.SerializerMethodField('avail')
 
     def avail(self,obj):
-        return False
+
+        if(obj.availability==0):
+            return True
+        else:
+            return False
     class Meta:
         model = faculties
         fields=('fac_id','fac_name','dept_id','fac_role','fac_cab_no','available')
 
+
+class RequestListSerializer(serializers.ModelSerializer):
+
+    details = serializers.SerializerMethodField('getStudentName')
+   
+    def getStudentName(self,obj):
+        details = students.objects.filter(prn=obj.prn_id)
+        semester = details.values()[0]['semester']
+        year=math.ceil(int(semester)/2)
+        return {"name":details.values()[0]['student_name'],"year":year}
+    class Meta:
+        model = meeting_req
+        fields=('request_id', 'status_req', 'dept_id_id', 'fac_id_id', 'prn_id', 'updated_date','details')
 
 
 class TimetableSerializer(serializers.ModelSerializer):

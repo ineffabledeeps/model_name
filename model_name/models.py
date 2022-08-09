@@ -25,6 +25,7 @@ class faculties(models.Model):
     fac_role = models.CharField(max_length=100)
     fac_cab_no = models.IntegerField(blank=True)
     updated_date = models.DateField(auto_now=True)
+    availability= models.BooleanField(default=False,max_length=100)
 
 
 
@@ -116,8 +117,6 @@ class exam(models.Model):
     exam_type = models.CharField(max_length=255)
     prn = models.ForeignKey(students,on_delete=models.CASCADE,max_length=255)
     updated_date = models.DateField(auto_now=True)
-
-
 
 class meeting_req(models.Model):
     # student_name = models.ForeignKey(students,on_delete=models.CASCADE,max_length=255)

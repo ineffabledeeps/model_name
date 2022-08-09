@@ -1,3 +1,5 @@
+from asyncio.windows_events import NULL
+from os import stat
 from urllib import response
 from .serializers import *
 from rest_framework.decorators import api_view, permission_classes,parser_classes
@@ -7,6 +9,7 @@ from model_name.models import classroom, timetable,dept
 from rest_framework.views import APIView
 from rest_framework.parsers import JSONParser
 from model_name.models import *
+from model_name.models import faculties
 from datetime import date
 from rest_framework import status
 
@@ -45,32 +48,61 @@ class FacultyList(APIView):
 @permission_classes((permissions.AllowAny,))
 class Send_meeting_reqList(APIView):
     def post(self,request):   # kaam karna h 
+        added=False
         prn = request.data["prn"]
         fac_id = request.data["fac_id"]
         time = meeting_req.objects.filter(prn=prn,fac_id=fac_id)
-        if (date.today() == time.values()[0]["updated_date"]):
-            return Response("Can't Request Again!",status=status.HTTP_409_CONFLICT)
-            # return Response("Cannot Request Again!")
+        if(len(time.values())>0):
+            if (date.today() == time.values()[0]["updated_date"]):
+                return Response("Can't Request Again!",status=status.HTTP_409_CONFLICT)
+                # return Response("Cannot Request Again!")
+            else:
+                dept_id = students.objects.filter(prn=prn)
+                req_store = meeting_req(prn = students.objects.get(prn=prn),
+                                        fac_id=faculties.objects.get(fac_id=fac_id),
+                                        dept_id=dept.objects.get(dept_id=dept_id.values()[0]["dept_id_id"]),
+                                        status_req="requesting")
+                req_store.save()
+                added=True
         else:
             dept_id = students.objects.filter(prn=prn)
-            
             req_store = meeting_req(prn = students.objects.get(prn=prn),
                                     fac_id=faculties.objects.get(fac_id=fac_id),
                                     dept_id=dept.objects.get(dept_id=dept_id.values()[0]["dept_id_id"]),
                                     status_req="requesting")
-
             req_store.save()
-            return Response(dept_id.values()[0]["dept_id_id"])
-        # return Response(request.data["name"])
+            added=True
+        return Response({"added":added})
+        #return Response(len(time.values())>0)
 
 
 # Faculty Visibility
+
+@permission_classes((permissions.AllowAny,))
+class Set_meeting_reqList(APIView):
+    def post(self,request,status):
+        is_updated=False
+
+        req_id = request.data["req_id"]
+        if status=="accept":
+            status="accepted"
+        elif status=="decline":
+            status="declined"
+        else : status=False
+
+        if(status):
+            data = meeting_req.objects.filter(request_id=req_id).update(status_req=status) # setting on the basi of req_id
+            is_updated=True
+        return Response({"is_updated":is_updated})
+
 @permission_classes((permissions.AllowAny,))
 class Get_meeting_reqList(APIView):
     def post(self,request):
         fac_id = request.data["fac_id"]
-        fetched_data = meeting_req.objects.all().filter(fac_id=fac_id) # fetching personalized req from table
-        return Response(fetched_data.values())
+        data = meeting_req.objects.all().filter(fac_id=fac_id) # fetching personalized req from table
+        serializer=RequestListSerializer(data,context={'request': request}, many=True)
+
+        return Response(serializer.data)
 
 @permission_classes((permissions.AllowAny,))
 class Set_reqList(APIView):
